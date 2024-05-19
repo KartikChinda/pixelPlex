@@ -1,8 +1,16 @@
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Navbar = () => {
     return (
-        <div>Navbar</div>
+        <nav className='flex flex-between fixed z-30 w-full px-6 py-4 lg:px-10 bg-palette-2 '>
+            <Link href="/" className='flex items-center gap-2'>
+                <Image src="/icons/logo.svg" width={32} height={32} alt='PixelPlex' className='size-10' />
+                <p className='text-[25px] font-extrabold text-palette-4 hidden md:block'>PixelPlex</p>
+            </Link>
+
+        </nav>
     )
 }
 

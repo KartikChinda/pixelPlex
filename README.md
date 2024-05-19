@@ -13,3 +13,5 @@ Steps:
 - Create components for the navbar and the sidebar, start working on those. 
 
 - For the sidebar, create your constants folder and add all the links and the routes in an array there. 
+
+- Pertaining to values in the sidebar, create the components to be rendered on the right side like home, upcoming etc. 
