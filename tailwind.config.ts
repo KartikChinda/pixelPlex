@@ -20,10 +20,10 @@ const config = {
     extend: {
       colors: {
         palette: {
-          1: "#222831",
-          2: "#393E46",
-          3: "#00ADB5",
-          4: "#EEEEEE",
+          1: "#050520",
+          2: "#150F28",
+          3: "#FF829E",
+          4: "#D4D7ED",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

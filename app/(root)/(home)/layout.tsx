@@ -1,11 +1,13 @@
+import Navbar from '@/components/Navbar'
+import Sidebar from '@/components/Sidebar'
 import React, { ReactNode } from 'react'
 
 const HomeLayout = ({ children }: { children: ReactNode }) => {
     return (
         <main className='relative'>
-            Navbar goes here.
+            <Navbar />
             <div className="flex">
-                SideBar goes here
+                <Sidebar />
                 <section className='flex flex-col min-h-screen flex-1 md:px-6 pb-6 pt-28 px-14 md:pb-14'>
                     <div className="w-full">
                         {children}
