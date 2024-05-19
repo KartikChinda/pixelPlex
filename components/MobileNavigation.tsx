@@ -34,12 +34,12 @@ const MobileNavigation = () => {
                     </div>
                     <div className='flex flex-col justify-between h-full'>
                         <SheetClose asChild>
-                            <section className='flex flex-col gap-6 pt-10 text-palette-4'>
+                            <section className='flex flex-col gap-6 pt-10 text-palette-4' >
                                 {sidebarLinks.map((link) => {
 
                                     return (
                                         // asChild just needs to be added more than most times. Here if you dont add it, the sidebar wont close. 
-                                        <SheetClose asChild>
+                                        <SheetClose asChild id={link.label}>
                                             {/* wrapping them up in a sheetClose component so we can close the sidebar on the click of a component.  */}
                                             <Link href={link.route} key={link.label} className='flex gap-3 items-center p-4 text-white rounded-lg font-bold justify-start ' style={pathName === link.route || pathName.startsWith(`${link.route}/`) ? { backgroundImage: "linear-gradient(to right, #AD6EFB , #FFA66C)" } : { backgroundImage: "" }}>
                                                 <Image src={link.imgUrl} alt={link.label} width={22} height={22} />

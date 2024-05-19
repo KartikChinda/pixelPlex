@@ -28,3 +28,5 @@ Steps:
 
 - Set up the route you want to take for signIn and signUp in the env file, and then design them. 
 - Do the step above for signUp as well. 
+
+- toDo: fix authColor and fix authForDifferentPages. 

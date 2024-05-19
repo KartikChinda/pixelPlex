@@ -25,6 +25,10 @@ const config = {
           3: "#FF829E",
           4: "#D4D7ED",
         },
+        backgroundImage: {
+          'home-background': "url('/images/hero-background.png')",
+
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
