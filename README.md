@@ -30,3 +30,7 @@ Steps:
 - Do the step above for signUp as well. 
 
 - toDo: fix authColor and fix authForDifferentPages. 
+
+- Work on the hero section of the homePage, where you add the time in a way that only the time is rendered on the client side. 
+
+- 
