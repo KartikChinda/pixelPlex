@@ -15,7 +15,7 @@ const Sidebar = () => {
                 {sidebarLinks.map((link) => {
 
                     return (
-                        <Link href={link.route} key={link.label} className='flex gap-3 items-center p-4 text-white rounded-lg font-bold justify-start ' style={pathName === link.route ? { backgroundImage: "linear-gradient(to right, #AD6EFB , #FFA66C)" } : { backgroundImage: "" }}>
+                        <Link href={link.route} key={link.label} className='flex gap-3 items-center p-4 text-white rounded-lg font-bold justify-start ' style={pathName === link.route || pathName.startsWith(`${link.route}/`) ? { backgroundImage: "linear-gradient(to right, #AD6EFB , #FFA66C)" } : { backgroundImage: "" }}>
                             <Image src={link.imgUrl} alt={link.label} width={22} height={22} />
                             <p className='hidden md:block'>{link.label}</p>
                         </Link>
