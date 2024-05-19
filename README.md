@@ -4,8 +4,9 @@ Welcome, to PixelPlex.
 
 
 - Using Stream because it is currently in use by Adobe, Soundcloud, Imgur etc. 
+- Using clerk because why not. 
 
-- Tech used: NextJs 14, Shadcn-UI, 
+- Tech used: NextJs 14, Shadcn-UI, Clerk for auth,  
 
 Steps: 
 - Added routes and fixed folder structure by adding root and auth as the (grouped routes), meeting and [id] as the slug routes, and just adding normal pages. 
@@ -15,3 +16,15 @@ Steps:
 - For the sidebar, create your constants folder and add all the links and the routes in an array there. 
 
 - Pertaining to values in the sidebar, create the components to be rendered on the right side like home, upcoming etc. 
+
+- Time to create the navbar. Pretty simple in the desktop version, but for the mobile version we are using the shadCn sheet component to work on a self closing hamburger component, so develop that. 
+
+- Auth using clerk, just follow these steps: 
+    1. npm install @clerk/nextjs
+    2. Set up env variables. 
+    3. Create middleware.ts in the root directory and copy paste the code given. 
+    4. Add clerkProvider to the layout of the app.  
+    5. Inside the middleware, set up protected routes. 
+
+- Set up the route you want to take for signIn and signUp in the env file, and then design them. 
+- Do the step above for signUp as well. 
