@@ -47,7 +47,9 @@ const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
 
     return (
         <StreamVideo client={videoClient}>
-
+            {/* voila, infused your application with the streamVideoClient.  */}
+            {/* What children do you want here though? Not the absolute basic app layout, because there you need to authenticate a user first. No, you need this in the rootLayout, where your home resides, because this all will happen only once you have logged in.  */}
+            {children}
         </StreamVideo>
     );
 };

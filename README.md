@@ -39,6 +39,9 @@ Steps:
 
 
 - Model created, now we have to create the entire functionality of createMeetings. Most of it is done in providers, and that is where stream resides. Providers are essentially components that wrap up our entire application and provide functionality wherever needed. 
+    - Why did we use Stream and not something like webRTC maybe? 
+        - webRTC is used to transfer files or streams but it is across two peers. So, here adding another user would have taken a massive hit on the performance, and successively with each addition, the performance would have gone down substantially because webrtc is built on top of UDP and uses a mesh topology, which becomes increasingly expensive with adding more clients. 
+        - So how do googleMeet and zoom do it? They use Selective Forwarding, where all peers talk to a central virtual machine, where what it does is say that a new peer comes to the meet, then the virtual machine creates a composed stream of all the users before, and adds in the new peer. But developing this on your own is a hassle, so we use stream. 
 
 
 - Now in the Providers: 
@@ -48,4 +51,8 @@ Steps:
     - Import this tokenProviders inside the creation of a client function. 
     - Before closing this, also make sure that if the client is undefined, you fire up a loading spinner. 
 
-- 
+- Wrap the children of the root in the app in this provider. 
+
+- Now that you finally have stream working, go back to the createMeeting in the meetingCards and create a meeting. 
+
+- Add toasts from shadCn to display popups of if meeting has been created, if it failed etc. 
