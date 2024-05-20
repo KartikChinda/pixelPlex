@@ -12,7 +12,7 @@ interface meeting {
 const MeetingCard = ({ img, title, description, handleClick, color }: meeting) => {
     return (
 
-        <div className='flex flex-col justify-between items-start w-full xl:max-w-[270px] min-h-[260px] rounded-xl cursor-pointer p-4 group' style={{ backgroundColor: color }} onClick={handleClick}>
+        <div className='flex flex-col justify-between items-start w-full min-h-[260px] rounded-xl cursor-pointer p-4 group' style={{ backgroundColor: color }} onClick={handleClick}>
             <div className='size-12  group-hover:size-14 duration-75 bg-black  rounded-xl flex justify-center items-center border-2 border-palette-2'>
                 <Image src={img} alt='icon type' width={28} height={28} />
             </div>

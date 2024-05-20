@@ -33,4 +33,9 @@ Steps:
 
 - Work on the hero section of the homePage, where you add the time in a way that only the time is rendered on the client side. 
 
-- 
+- Now, work on the meeting Cards, add their UI, make the cards reusable. 
+
+- On clicking these cards, we need to open up some form of a modal, for say starting a new meeting or joining a meeting etc, so now work on creating that model. 
+
+
+- Model created, now we have to create the entire functionality of createMeetings. 
