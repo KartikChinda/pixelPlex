@@ -38,4 +38,11 @@ Steps:
 - On clicking these cards, we need to open up some form of a modal, for say starting a new meeting or joining a meeting etc, so now work on creating that model. 
 
 
-- Model created, now we have to create the entire functionality of createMeetings. 
+- Model created, now we have to create the entire functionality of createMeetings. Most of it is done in providers, and that is where stream resides. Providers are essentially components that wrap up our entire application and provide functionality wherever needed. 
+
+
+- Now in the Providers: 
+    - Copy the boilerplate code from Stream to init. 
+    - Create your client by taking information about the user from Clerk. 
+    - Create the tokenProviders, in a server side rendered page. 
+    - 
