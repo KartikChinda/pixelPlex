@@ -1,11 +1,13 @@
+
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk"
 import { useEffect, useState } from "react"
 
 export const useGetCallById = (id: string) => {
-    const [currentCall, setcurrentCall] = useState<Call>()
+    const [call, setcurrentCall] = useState<Call>()
 
     // can be done without it as well, we are just streamlining loading. 
-    const [isCallLoading, setisCallLoading] = useState(false)
+    // THIS ERROR TOOK ME TWO HOURS
+    const [isCallLoading, setisCallLoading] = useState(true)
 
     const client = useStreamVideoClient();
 
@@ -28,6 +30,6 @@ export const useGetCallById = (id: string) => {
     }, [client, id])
 
 
-    return { currentCall, isCallLoading };
+    return { call, isCallLoading };
 
 }
