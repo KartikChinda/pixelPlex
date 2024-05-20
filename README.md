@@ -56,3 +56,7 @@ Steps:
 - Now that you finally have stream working, go back to the createMeeting in the meetingCards and create a meeting. 
 
 - Add toasts from shadCn to display popups of if meeting has been created, if it failed etc. Just go through the documentation for it. 
+
+- Now you can go to the meetingPage and start rendering it up, if the call is set there, then you go ahead and show the meetingRoom component, else redirect to the meetingSetup. 
+
+- Once this is done, and your setup is finished, what call do you have to go into? For that we are making a new hook. 
