@@ -45,4 +45,7 @@ Steps:
     - Copy the boilerplate code from Stream to init. 
     - Create your client by taking information about the user from Clerk. 
     - Create the tokenProviders, in a server side rendered page. 
-    - 
+    - Import this tokenProviders inside the creation of a client function. 
+    - Before closing this, also make sure that if the client is undefined, you fire up a loading spinner. 
+
+- 

@@ -1,5 +1,6 @@
 // directly copied from stream installation. Essentially is boilerplate code. 
 "use client";
+import { tokenProvider } from '@/actions/stream.actions';
 import { useUser } from '@clerk/nextjs';
 import {
 
@@ -8,7 +9,8 @@ import {
 
 } from '@stream-io/video-react-sdk';
 import { ReactNode, useEffect, useState } from 'react';
-import { Stream } from 'stream';
+
+import LoadingCircle from '@/components/LoadingCircle';
 
 const apiKey = process.env.NEXT_PUBLIC_STREAM_API_KEY;
 
@@ -34,12 +36,14 @@ const StreamVideoProvider = ({ children }: { children: ReactNode }) => {
                 image: user?.imageUrl,
             },
             // middle auth sart of a thing to confirm that clerk and stream both are talking about the same user. 
-            tokenProvider,
+            tokenProvider: tokenProvider,
         })
+        setvideoClient(newClient);
 
 
     }, [user, isLoaded])
 
+    if (!videoClient) return (<LoadingCircle />)
 
     return (
         <StreamVideo client={videoClient}>
