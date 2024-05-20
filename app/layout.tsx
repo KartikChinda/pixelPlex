@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Toaster } from "@/components/ui/toaster";
 
 
 
@@ -34,7 +35,10 @@ export default function RootLayout({
           }
         }}
       >
-        <body className=" bg-palette-1 text-[#EEEEEE]">{children}</body>
+        <body className=" bg-palette-1 text-[#EEEEEE]">
+          {children}
+          <Toaster />
+        </body>
       </ClerkProvider>
     </html>
 

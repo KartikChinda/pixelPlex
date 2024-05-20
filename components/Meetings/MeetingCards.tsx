@@ -5,12 +5,16 @@ import { useRouter } from 'next/navigation';
 import Modal from './Meeting/Modal'
 import { useUser } from '@clerk/nextjs';
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk';
+import { useToast } from '../ui/use-toast';
 
 const MeetingCards = () => {
 
     const router = useRouter();
 
     const [meetingState, setmeetingState] = useState<"isJoiningMeeting" | "isInstantMeeting" | "isScheduleMeeting" | undefined>()
+
+    // for toast 
+    const { toast } = useToast();
 
     // this part is for the creation of a meeting
     const user = useUser();
@@ -27,6 +31,12 @@ const MeetingCards = () => {
     const createMeeting = async () => {
         // follow the creating a call section here: https://getstream.io/video/docs/api/
         if (!client || !user) return;
+
+        // this is if you want to schedule calls. 
+        if (!callValues.dateTime) {
+            toast({ title: "Please enter a date and a time to schedule a meeting. " })
+            return;
+        }
 
 
 
@@ -50,10 +60,12 @@ const MeetingCards = () => {
 
             setcreatedCallDetails(call);
             router.push(`/meeting/${call.id}`)
+            toast({ title: "Meeting created!" })
 
 
         } catch (error) {
             console.log("This error is from creating a meeting: ", error);
+            toast({ title: "Failed to create a meeting." })
         }
 
 

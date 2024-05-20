@@ -55,4 +55,4 @@ Steps:
 
 - Now that you finally have stream working, go back to the createMeeting in the meetingCards and create a meeting. 
 
-- Add toasts from shadCn to display popups of if meeting has been created, if it failed etc. 
+- Add toasts from shadCn to display popups of if meeting has been created, if it failed etc. Just go through the documentation for it. 
