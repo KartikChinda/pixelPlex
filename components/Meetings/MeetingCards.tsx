@@ -61,7 +61,13 @@ const MeetingCards = () => {
             })
 
             setcreatedCallDetails(call);
-            router.push(`/meeting/${call.id}`)
+            // this is how we use the same createFunction for both creating a new meeting and scheduling one. 
+            if (!callValues.description) {
+                router.push(`/meeting/${call.id}`);
+            }
+            toast({
+                title: 'Meeting Created',
+            });
             toast({ title: "Meeting created!" })
 
 
@@ -72,6 +78,8 @@ const MeetingCards = () => {
 
 
     }
+
+    const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${createdCallDetails?.id}`
 
     return (
         <section className='grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4'>
@@ -131,7 +139,7 @@ const MeetingCards = () => {
                             timeIntervals={30}
                             timeCaption="time"
                             dateFormat="MMMM d, yyyy h:mm aa"
-                            className="w-full rounded bg-dark-3 p-2 focus:outline-none"
+                            className="w-full rounded bg-palette-1 p-2 focus:outline-none"
                         />
                     </div>
                 </Modal>
@@ -140,8 +148,9 @@ const MeetingCards = () => {
                     isOpen={meetingState === "isScheduleMeeting"}
                     onClose={() => setmeetingState(undefined)}
                     title="Meeting created!"
+                    buttonText='Copy meeting link'
                     handleClick={() => {
-                        navigator.clipboard.writeText("Meeting link goes here")
+                        navigator.clipboard.writeText(meetingLink)
                         toast({ title: "Link copied!" })
                     }}
 
