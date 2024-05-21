@@ -7,7 +7,7 @@ const Upcoming = () => {
             <h1 className='text-3xl font-bold'>
                 Upcoming Meetings
             </h1>
-            <CallList />
+            <CallList type={"upcoming"} />
         </section>
     )
 }
