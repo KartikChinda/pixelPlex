@@ -46,7 +46,8 @@ const MeetingSetup = ({
                     Join with mic and camera off.
 
                 </label>
-                <DeviceSettings />
+                {/* this is not working, need to check why that is.  */}
+                {/* <DeviceSettings /> */}
             </div>
             <Button className='rounded-lg px-3 py-2 bg-palette-3 text-palette-1 hover:border-2 hover:border-palette-3 hover:bg-palette-2 font-bold text-md hover:text-palette-4 ' onClick={handleClick}>
                 Join meeting
