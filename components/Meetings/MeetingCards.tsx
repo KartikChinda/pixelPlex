@@ -50,7 +50,7 @@ const MeetingCards = () => {
 
             // here we needed to add the || because of typescript. Oh how I love typescript. 
             const meetingStartsAt = callValues.dateTime.toISOString() || new Date(Date.now()).toISOString();
-            const description = callValues.description || "This is an instant meeting. ";
+            const description = callValues.description || "This is an instant meeting.";
 
             await call.getOrCreate({
                 data: {
