@@ -23,9 +23,16 @@ export default function RootLayout({
       {/* need to wrap everything inside the clerk provider for it to work, also clerkProvider has this appearance attribute which can be used to add css to your clerk components */}
       <ClerkProvider
         appearance={{
+          elements: {
+
+            button:
+              " text-palette-4",
+          },
+
           layout: {
             // shows only google instead of login with google. 
-            socialButtonsVariant: 'iconButton'
+            socialButtonsVariant: 'iconButton',
+
           },
           variables: {
             colorText: '#D4D7ED',
@@ -36,7 +43,7 @@ export default function RootLayout({
           }
         }}
       >
-        <body className=" bg-palette-1 text-[#EEEEEE]">
+        <body className=" bg-palette-1 text-palette-4">
           {children}
           <Toaster />
         </body>
