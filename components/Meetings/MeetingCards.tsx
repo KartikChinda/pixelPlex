@@ -6,6 +6,8 @@ import Modal from './Meeting/Modal'
 import { useUser } from '@clerk/nextjs';
 import { Call, useStreamVideoClient } from '@stream-io/video-react-sdk';
 import { useToast } from '../ui/use-toast';
+import { Textarea } from '../ui/textarea';
+import ReactDatePicker from 'react-datepicker';
 
 const MeetingCards = () => {
 
@@ -107,6 +109,47 @@ const MeetingCards = () => {
 
             />
 
+            {/* this is for creating meeting if it has not already been created, but not for now, for later.  */}
+            {!createdCallDetails ?
+                <Modal
+                    isOpen={meetingState === "isScheduleMeeting"}
+                    onClose={() => setmeetingState(undefined)}
+                    title="Create a meeting"
+                    handleClick={createMeeting}>
+                    <div className='flex flex-col gap-2 '>
+                        <label className='text-base text-palette-4'>Add a description</label>
+                        <Textarea className='bg-palette-1 border-palette-3' onChange={(e) => { setCallValues({ ...callValues, description: e.target.value }) }} />
+                    </div>
+                    <div className='flex flex-col gap-2 w-full'>
+                        <label >Select the date and time</label>
+                        {/* stackoverflow ftw.  */}
+                        <ReactDatePicker
+                            selected={callValues.dateTime}
+                            onChange={(date) => setCallValues({ ...callValues, dateTime: date! })}
+                            showTimeSelect
+                            timeFormat="HH:mm"
+                            timeIntervals={30}
+                            timeCaption="time"
+                            dateFormat="MMMM d, yyyy h:mm aa"
+                            className="w-full rounded bg-dark-3 p-2 focus:outline-none"
+                        />
+                    </div>
+                </Modal>
+                :
+                <Modal
+                    isOpen={meetingState === "isScheduleMeeting"}
+                    onClose={() => setmeetingState(undefined)}
+                    title="Meeting created!"
+                    handleClick={() => {
+                        navigator.clipboard.writeText("Meeting link goes here")
+                        toast({ title: "Link copied!" })
+                    }}
+
+                />
+
+
+            }
+
             <Modal
                 isOpen={meetingState === "isInstantMeeting"}
                 onClose={() => setmeetingState(undefined)}
@@ -114,6 +157,9 @@ const MeetingCards = () => {
                 buttonText='Start meeting'
                 handleClick={createMeeting}
             />
+
+
+
         </section>
     )
 }

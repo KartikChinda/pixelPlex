@@ -60,3 +60,7 @@ Steps:
 - Now you can go to the meetingPage and start rendering it up, if the call is set there, then you go ahead and show the meetingRoom component, else redirect to the meetingSetup. 
 
 - Once this is done, and your setup is finished, what call do you have to go into? For that we are making a new hook. 
+
+- Make the hook, get the meeting room, and design it up. Set the close buttons as well. 
+
+- Time to go over and start scheduling meetings. You need a model, which creates a call and gives you a link for it. In that model you will have the textarea, and a reactDatePicker custom date picker. 
